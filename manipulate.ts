@@ -30,4 +30,4 @@ export function permutation(inputStr: string): string[] {
 }
 // console.log(permutation('abc'))
 // console.log(permutation('aabb'))
-console.log(permutation('ab'))
+// console.log(permutation('ab'))
