@@ -1,4 +1,4 @@
-function countSmileys(input: string[]): number {
+export function countSmileys(input: string[]): number {
     let result = 0
 
     const isSmilyFace = (face: string): boolean => {
@@ -13,6 +13,6 @@ function countSmileys(input: string[]): number {
     return result
 }
 
-console.log(countSmileys([':)', ';(', ';}', ':-D']))
-console.log(countSmileys([';D', ':-(', ':-)', ';~)']))
-console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))
+// console.log(countSmileys([':)', ';(', ';}', ':-D']))
+// console.log(countSmileys([';D', ':-(', ':-)', ';~)']))
+// console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))

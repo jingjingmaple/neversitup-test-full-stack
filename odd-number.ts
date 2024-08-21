@@ -1,4 +1,4 @@
-function findOddInteger(input: number[]): number | null {
+export function findOddInteger(input: number[]): number | null {
     const itemCount: { [key: number]: number } = {}
 
     for (const item of input) {
@@ -17,4 +17,4 @@ function findOddInteger(input: number[]): number | null {
     return null
 }
 
-console.log(findOddInteger([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
+// console.log(findOddInteger([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))

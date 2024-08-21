@@ -9,7 +9,7 @@ function removeDuplicate(input: string[]) {
     return uniqueArray
 }
 
-function permutation(inputStr: string): string[] {
+export function permutation(inputStr: string): string[] {
     const inputArray: string[] = inputStr.split('')
     let result: string[] = []
 
@@ -28,5 +28,6 @@ function permutation(inputStr: string): string[] {
 
     return removeDuplicate(result)
 }
-console.log(permutation('abc'))
-console.log(permutation('aabb'))
+// console.log(permutation('abc'))
+// console.log(permutation('aabb'))
+console.log(permutation('ab'))
