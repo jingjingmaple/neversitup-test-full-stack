@@ -9,36 +9,24 @@ function removeDuplicate(input: string[]) {
   return uniqueArray;
 }
 
-function permutation(input: string): string[] {
-  const result: string[] = [];
-  console.log("input", input.length);
+function permutation(inputStr: string): string[] {
+  const inputArray: string[] = inputStr.split("");
+  let result: string[] = [];
 
-  for (let i = 0; i < input.length; i++) {
-    const inputChar = input.split("");
-    console.log("inputchar", inputChar, "i", i);
-    const currentChar = inputChar[i];
-    inputChar.splice(i, 1);
-    console.log("after splice take out", inputChar);
-    const remainingCharLength = inputChar.length;
+  for (let i = 0; i < inputArray.length; i++) {
+    if (inputArray.length == 1) return inputArray;
 
-    // Insert to between char
-    for (let k = 0; k <= remainingCharLength; k++) {
-      const newArr = [...inputChar];
-      console.log("newArr", newArr, "inputchar", inputChar);
-      console.log("i", i, "k", k);
-      newArr.splice(k, 0, currentChar);
+    const removedChar = inputArray.shift() as string;
+    const resultStack = permutation(inputArray.join(""));
 
-      const newWord = newArr.join("");
-      console.log("newWord", newWord);
-      result.push(newWord);
-      console.log("    >>>>>>>>>>>>>>>>>>>>>>>");
+    for (let y = 0; y < resultStack.length; y++) {
+      resultStack[y] = `${resultStack[y]}${removedChar}`;
     }
-    console.log("===================================");
+    result = result.concat(resultStack);
+    inputArray.push(removedChar[0]);
   }
-  console.log("result", result);
-  const uniqueAnswer = removeDuplicate(result);
 
-  return uniqueAnswer;
+  return removeDuplicate(result);
 }
-
 console.log(permutation("abc"));
+console.log(permutation("aabb"));
